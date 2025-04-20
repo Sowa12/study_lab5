@@ -23,12 +23,12 @@ namespace editor {
         void export_document(const std::string& path);
 
         /**
-         * Add figure and redraw canvas
+         * Add figure and redraw figure
          */
         void add_primitive(std::shared_ptr<IFigure>& primitive);
 
         /**
-         * Remove figure and redraw canvas
+         * Remove figure and redraw figure
          */
         void remove_primitive(std::shared_ptr<IFigure>& primitive);
 
