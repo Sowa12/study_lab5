@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Create doxygen
         uses: actions/upload-release-asset@v1
-        with:
-          submodules: true
       - run: sudo apt-get install Doxygen -f
       - run: doxygen doxygen.conf
       - name: Upload artifact
