@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Create doxygen
         uses: actions/checkout@v2
-      - run: sudo apt-get install Doxygen -y
+      - run: sudo apt-get install doxygen -y
       - run: doxygen doxygen.conf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
