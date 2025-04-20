@@ -11,11 +11,13 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/upload-release-asset@v1
+      - name: Create doxygen
+        uses: actions/upload-release-asset@v1
         with:
           submodules: true
       - run: sudo apt-get install Doxygen -f
       - run: doxygen doxygen.conf
-      - uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
             path: './html/'
