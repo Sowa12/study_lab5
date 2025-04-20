@@ -1,0 +1,18 @@
+name: Doxygen GitHub Pages Deploy Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/upload-release-asset@v1
+      - run: sudo apt-get install Doxygen -f
+      - run: doxygen doxygen.conf
+      - run: './html/'
