@@ -12,7 +12,7 @@ jobs:
       contents: write
     steps:
       - name: Create doxygen
-        uses: actions/upload-release-asset@v1
+        uses: actions/checkout@v2
       - run: sudo apt-get install Doxygen -f
       - run: doxygen doxygen.conf
       - name: Upload artifact
