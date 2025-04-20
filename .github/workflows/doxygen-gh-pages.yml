@@ -16,4 +16,6 @@ jobs:
           submodules: true
       - run: sudo apt-get install Doxygen -f
       - run: doxygen doxygen.conf
-      - run: './html/'
+      - uses: actions/upload-pages-artifact@v1
+        with:
+            path: './html/'
