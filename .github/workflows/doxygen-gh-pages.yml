@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   deploy:
@@ -13,6 +12,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/upload-release-asset@v1
+        with:
+          submodules: true
       - run: sudo apt-get install Doxygen -f
       - run: doxygen doxygen.conf
       - run: './html/'
