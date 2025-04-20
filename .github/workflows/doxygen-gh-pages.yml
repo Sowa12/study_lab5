@@ -32,9 +32,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install Doxygen
-        run: sudo apt install doxygen && doxygen --version
+        run: sudo apt install doxygen -y && doxygen --version
       - name: Create documentation     
-        run: doxygen
+        run: doxygen doxygen.conf
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
